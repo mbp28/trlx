@@ -1,3 +1,4 @@
+import argparse
 import random
 
 import evaluate
@@ -21,6 +22,13 @@ def set_seed(seed_val=42):
 
 
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--toy', type='str')
+
+    args = parser.parse_args()
+
+    
     output_dir = "gpt2-supervised-summarize-checkpoint"
     train_batch_size = 32
     gradient_accumulation_steps = 1
