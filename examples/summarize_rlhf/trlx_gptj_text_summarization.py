@@ -23,7 +23,7 @@ SFT_MODEL_PATH = "CarperAI/openai_summarize_tldr_sft"
 
 if __name__ == "__main__":
     # Load the pre-trained reward model
-    rw_tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+    rw_tokenizer = AutoTokenizer.from_pretrained("gpt2")
     rw_tokenizer.pad_token = rw_tokenizer.eos_token
     rw_model = GPTRewardModel(SFT_MODEL_PATH)
     rw_model.load_state_dict(torch.load(REWARD_CHECKPOINT_PATH))

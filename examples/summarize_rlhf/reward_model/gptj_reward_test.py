@@ -86,7 +86,7 @@ class DataCollatorReward:
 
 
 if __name__ == "__main__":
-    tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+    tokenizer = AutoTokenizer.from_pretrained("gpt2")
     tokenizer.pad_token = tokenizer.eos_token
     PAD_ID = tokenizer(tokenizer.pad_token)["input_ids"][0]
 

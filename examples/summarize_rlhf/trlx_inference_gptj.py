@@ -10,7 +10,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 def load_model(path):
-    tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+    tokenizer = AutoTokenizer.from_pretrained("gpt2")
     model = AutoModelForCausalLM.from_pretrained(path)
     model.config.pad_token_id = tokenizer.bos_token_id
     tokenizer.pad_token = tokenizer.eos_token
@@ -26,7 +26,7 @@ if not os.path.exists(REWARD_CHECKPOINT_PATH):
         f"wget -O {REWARD_CHECKPOINT_PATH} \
         https://huggingface.co/CarperAI/openai_summarize_tldr_rm_checkpoint/resolve/main/pytorch_model.bin"
     )
-rw_tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+rw_tokenizer = AutoTokenizer.from_pretrained("gpt2")
 rw_tokenizer.pad_token = rw_tokenizer.eos_token
 rw_model = GPTRewardModel("CarperAI/openai_summarize_tldr_ppo")
 rw_model.load_state_dict(torch.load(REWARD_CHECKPOINT_PATH))

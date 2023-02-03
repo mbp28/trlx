@@ -56,7 +56,7 @@ def test_scheduler_class_getters(scheduler_name: str):
 @pytest.mark.parametrize(
     "model_name",
     [
-        "EleutherAI/gpt-j-6B",
+        "gpt2",
         "EleutherAI/gpt-neox-20b",
         "gpt2",
         "facebook/opt-1.3b",
@@ -93,7 +93,7 @@ def test_hf_attr_getters(model_name: str):
 @pytest.mark.parametrize(
     "model_name",
     [
-        "EleutherAI/gpt-j-6B",
+        "gpt2",
         "EleutherAI/gpt-neox-20b",
         "facebook/opt-1.3b",
         "bigscience/bloom-560m",

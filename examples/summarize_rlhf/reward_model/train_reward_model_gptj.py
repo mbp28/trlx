@@ -86,7 +86,7 @@ def compute_metrics(eval_preds):
 
 
 if __name__ == "__main__":
-    tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+    tokenizer = AutoTokenizer.from_pretrained("gpt2")
     tokenizer.pad_token = tokenizer.eos_token
 
     if not os.path.exists("rm_checkpoint"):
